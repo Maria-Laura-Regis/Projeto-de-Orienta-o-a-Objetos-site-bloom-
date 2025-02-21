@@ -1,0 +1,96 @@
+/* 🔹 Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 🔹 Barra superior fixa */
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #4A90E2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Logo pequena na lateral esquerda */
+.logo-small {
+    height: 40px;
+}
+
+/* 🔹 Botão de menu (três barrinhas) no canto direito */
+.menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* 🔹 Estilização do menu pop-up lateral */
+.popup-menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s ease-in-out;
+}
+
+/* 🔹 Botão de fechar dentro do menu pop-up */
+.close-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+/* 🔹 Links dentro do pop-up */
+.popup-menu a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 0;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 🔹 Barra de navegação principal */
+.navbar {
+    background-color: #4A90E2;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 🔹 Logo principal no centro da barra */
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+/* 🔹 Links do menu de navegação */
+.menu-links {
+    display: flex;
+}
+
+.menu-item {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras - BLOOM</title>
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartItemsContainer = document.querySelector('.cart-items');
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            cart.forEach(item => {
+                const cartRow = document.createElement('div');
+                cartRow.classList.add('cart-row');
+                cartRow.innerHTML = `
+                    <div class="cart-item cart-column">
+                        <img class="cart-item-image" src="${item.imageSrc}" width="100" height="100">
+                        <span class="cart-item-title">${item.title}</span>
+                    </div>
+                    <span class="cart-price cart-column">${item.price}</span>
+                    <div class="cart-quantity cart-column">
+                        <input class="cart-quantity-input" type="number" value="${item.quantity}">
+                        <button class="btn btn-danger" type="button">REMOVE</button>
+                    </div>`;
+                cartItemsContainer.append(cartRow);
+            });
+                        const purchaseButton = document.querySelector('.btn-purchase');
+            purchaseButton.addEventListener('click', () => {
+                // Clear the cart data from localStorage or sessionStorage
+                localStorage.removeItem('cart'); // Use sessionStorage.removeItem('cart') if using sessionStorage
+
+                // Redirect to home.2.html
+                window.location.href = 'home2.html';
+            });
+
+            // Optionally, you can add event listeners for remove buttons and quantity inputs here
+        });
+    </script>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .cart-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+        .cart-item-details {
+            flex: 1;
+        }
+        .cart-item-title {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .cart-item-price {
+            color: #333;
+            font-size: 1.1em;
+        }
+        .cart-total {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: right;
+            margin-top: 20px;
+        }
+        .btn-purchase {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #0088ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn-purchase:hover {
+            background-color: #0650a5;
+        }
+    </style>
+
+<body>
+<!-- Shopping Cart Section -->
+     <header>
+        <h1>Your Cart</h1>
+        <a href="home.html">Back to Home</a>
+    </header>
+
+    <div class="cart-items">
+        <!-- Cart items will be dynamically inserted here -->
+    </div>
+
+    <div class="cart-total">
+        <strong>Total: </strong>
+        <span class="cart-total-price">$0.00</span>
+    </div>
+
+    <button class="btn-purchase">Finalizar Compra</button>
+
+   
+
+<footer>
+    <p>&copy; 2025 BLOOM - Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>
