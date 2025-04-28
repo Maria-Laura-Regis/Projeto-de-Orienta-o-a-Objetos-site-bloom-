@@ -6,16 +6,11 @@
 **A modern web application built with Bottle Python**  
 *(This is a simple model of a comecial shop site)*  
 
-[![Live Demo](https://img.shields.io/badge/Demo-Live-green?style=for-the-badge)](https://your-website-url.com)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
-
-
 
 ## ✨ Features
 - **Responsive Design**: Works on all devices
 - **User Authentication**: Secure login/signup system
-- **[Key Feature 1]**: Brief description
-- **[Key Feature 2]**: Brief description
+
 
 ## 🛠️ Tech Stack
 **Frontend**:  
